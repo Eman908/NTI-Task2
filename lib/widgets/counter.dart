@@ -29,62 +29,53 @@ class _CounterState extends State<Counter> {
           const SizedBox(
             height: 24,
           ),
-          Material(
+          fun(
+            press: () {
+              setState(() {
+                x++;
+              });
+            },
+            icon: const Icon(
+              Icons.add,
+              size: 32,
+              color: Colors.white,
+            ),
             color: Colors.blue,
-            borderRadius: BorderRadius.circular(12),
-            child: fun(
-              press: () {
-                setState(() {
-                  x++;
-                });
-              },
-              icon: const Icon(
-                Icons.add,
-                size: 32,
-                color: Colors.white,
-              ),
-            ),
           ),
           const SizedBox(
             height: 24,
           ),
-          Material(
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(12),
-            child: fun(
-              press: () {
-                setState(() {
-                  if (x > 0) {
-                    x--;
-                  } else {
-                    x = 0;
-                  }
-                });
-              },
-              icon: const Icon(
-                Icons.remove,
-                size: 32,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Material(
-            color: Colors.grey,
-            borderRadius: BorderRadius.circular(12),
-            child: fun(
-              press: () {
-                setState(() {
+          fun(
+            press: () {
+              setState(() {
+                if (x > 0) {
+                  x--;
+                } else {
                   x = 0;
-                });
-              },
-              icon: const Icon(
-                Icons.repeat,
-                size: 32,
-              ),
+                }
+              });
+            },
+            icon: const Icon(
+              Icons.remove,
+              size: 32,
+              color: Colors.white,
             ),
+            color: Colors.amber,
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          fun(
+            press: () {
+              setState(() {
+                x = 0;
+              });
+            },
+            icon: const Icon(
+              Icons.repeat,
+              size: 32,
+            ),
+            color: Colors.grey,
           )
         ],
       ),
